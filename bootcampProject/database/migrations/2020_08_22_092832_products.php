@@ -14,14 +14,19 @@ class Products extends Migration
     public function up()
     {
         Schema::create('products', function (Blueprint $table) {
-            $table->id();
+            $table->increments('id');
             $table->string('name');
             $table->string('photo');
             $table->decimal('price',5,2);
-            $table->string('created_by');
-            $table->string('updated_by');
-            $table->string('deleted_by');
+            $table->integer('created_by')->unsigned();
+            $table->integer('updated_by')->unsigned();
+            $table->integer('deleted_by')->unsigned()->nullable();
             $table->timestamps();
+            $table->softDeletes(); //Kesinlikle eklenmeli.
+
+            $table->foreign('created_by')->references('id')->on('users')->cascadeOnDelete();
+            $table->foreign('updated_by')->references('id')->on('users')->cascadeOnDelete();
+            $table->foreign('deleted_by')->references('id')->on('users')->cascadeOnDelete();
         });
     }
 

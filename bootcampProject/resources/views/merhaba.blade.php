@@ -1,5 +1,5 @@
 Merhaba burda view çalıştı! <br>
 
-@foreach($users as $user)
-    {{$user->name}} <br>
+@foreach($products as $product)
+    {{$product->user[0]->name}} - {{$product->name}} - {{$product->price." $ "}} <br>
 @endforeach

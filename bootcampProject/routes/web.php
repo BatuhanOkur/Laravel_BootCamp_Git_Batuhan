@@ -17,6 +17,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+
 Route::get('/merhaba','HomeController@merhaba');
-Route::get('/kayit','HomeController@kayit');
-Route::get('/merhabaliste','HomeController@merhabaliste');
+Route::get('/kayit','HomeController@createView');
+Route::post('/kaydet','HomeController@create');
+Route::get('/merhabaliste','HomeController@hellolist');

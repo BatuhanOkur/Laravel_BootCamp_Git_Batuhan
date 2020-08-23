@@ -17,7 +17,7 @@
     <div class="card">
         <h5 class="card-header" style="background-color: black; color: white;">Sign Up</h5>
         <div class="card-body">
-            <form class="form-signin">
+            <form class="form-signin" action="/kaydet" method="post">
                 <div class="form-group ">
                     <label for="name" class="float-left h5">Name</label>
                     <input type="text" class="form-control" id="name"  placeholder="Type here your name...">
@@ -32,6 +32,7 @@
                     <label for="password" class="float-left h5">Password</label>
                     <input type="password" class="form-control" id="password" placeholder="Type here your password...">
                 </div>
+                @csrf
                 <button type="submit" class="btn btn-dark">Submit</button>
             </form>
         </div>
