@@ -14,12 +14,12 @@ class HomeController extends Controller
         //$users = DB::table('users')->get(); //Veritabanından kullanıcıları çeker.
         //$users = User::all(); //Model kullanarak kullanıcıları çeker.
         //dd($users);
-        $products = Product::with(['user'])->get();
-        /*$products = DB::table('users')
+        //$products = Product::with(['user'])->get();
+        $products = DB::table('users')
         ->join('products','products.created_by','=','users.id')
-        ->select() //burdan hem kullanıcı adını hem de ürün adını almayı yapınız
+        ->select('users.name','products.name') //burdan hem kullanıcı adını hem de ürün adını almayı yapınız
         ->get();
-    */
+
         return view('merhaba', compact('products'));//->with(['users' => $users]); //merhaba isimli view dosyasına kullanıcılar yollandı.
     }
     public function createView(){
