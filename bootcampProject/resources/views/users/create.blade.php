@@ -20,17 +20,17 @@
             <form class="form-signin" action="/kaydet" method="post">
                 <div class="form-group ">
                     <label for="name" class="float-left h5">Name</label>
-                    <input type="text" class="form-control" id="name"  placeholder="Type here your name...">
+                    <input type="text" name="name" class="form-control" id="name"  placeholder="Type here your name...">
 
                 </div>
                 <div class="form-group">
                     <label for="email" class="float-left h5">Email address</label>
-                    <input type="email" class="form-control" id="email"  placeholder="Type here your email address...">
+                    <input type="email" class="form-control" name="email" id="email"  placeholder="Type here your email address...">
 
                 </div>
                 <div class="form-group">
                     <label for="password" class="float-left h5">Password</label>
-                    <input type="password" class="form-control" id="password" placeholder="Type here your password...">
+                    <input type="password" class="form-control" name="password" id="password" placeholder="Type here your password...">
                 </div>
                 @csrf
                 <button type="submit" class="btn btn-dark">Submit</button>

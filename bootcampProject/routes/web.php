@@ -21,4 +21,5 @@ Route::get('/', function () {
 Route::get('/merhaba','HomeController@merhaba');
 Route::get('/kayit','HomeController@createView');
 Route::post('/kaydet','HomeController@create');
-Route::get('/merhabaliste','HomeController@hellolist');
+Route::get('/index','HomeController@index');
+Route::get('/sil/{id}','HomeController@delete');
