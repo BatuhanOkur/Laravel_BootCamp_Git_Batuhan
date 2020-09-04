@@ -14,11 +14,15 @@
             background-color: white;
             color: #C82333;
         }
+        .btn-primary:hover{
+            background-color: white;
+            color: #0069D9;
+        }
     </style>
 </head>
 <body>
 
-<table class="table" style="width: 80%; margin-top: 10%; margin-left: 10%; text-align: center;">
+<table class="table float-right" style="width: 80%; margin-top: 10%; margin-left: 10%; text-align: center;">
     <thead class="thead-dark">
     <tr>
         <th scope="col">#</th>
@@ -36,7 +40,9 @@
                 <td>{{$user->name}}</td>
                 <td>{{$user->email}}</td>
                 <td>{{$user->password}}</td>
-                <td><a class="btn btn-danger" href="/sil/{{$user->id}}">Sil</a></td>
+                <td><a class="btn btn-danger" href="/sil/{{$user->id}}">Sil</a>
+                    <a class="btn btn-primary" href="/guncelle/{{$user->id}}">Güncelle</a>
+                </td>
 
             </tr>
         @endforeach

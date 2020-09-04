@@ -40,6 +40,23 @@ class HomeController extends Controller
         return "Kayit basariyla tamamlandi";
 
     }
+
+    public function updateView($id){
+        $user = User::where('id',$id)->get();
+        $user = $user->first();
+
+        return view('users.update',compact('user'));
+    }
+
+    public function update(Request $request,$id){
+        User::where('id',$id)->update([
+            'name' => $request->get('name'),
+            'email' => $request->get('email'),
+            'updated_at' => Carbon::now()
+        ]);
+        return "Başarıyla güncellendi!";
+    }
+
     public function index(){
         $users = User::where('deleted_at','=',null)->get();
         return view('users/index',compact('users'));
