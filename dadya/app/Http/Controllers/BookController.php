@@ -117,4 +117,10 @@ class BookController extends Controller
 
         return redirect()->route('book.index')->with('message',$id." ID'li kitap başarıyla güncellendi!");
     }
+
+    public function bookDetail($id){
+        $book = Book::where('id',$id)->get();
+        $book = $book->first();
+        return view('books.detail',compact('book'));
+    }
 }

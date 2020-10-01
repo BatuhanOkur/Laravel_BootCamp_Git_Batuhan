@@ -51,6 +51,7 @@ Route::get('/kitap-liste',[BookController::class,'bookIndex'])->name('book.index
 Route::get('/kitap-sil/{id}',[BookController::class,'bookDelete'])->name('book.delete');
 Route::get('/kitap-guncelle/{id}',[BookController::class,'bookUpdateView']);
 Route::post('/kitap-guncelle/{id}',[BookController::class,'bookUpdate'])->name('book.update');
+Route::get('/kitap-detay/{id}',[BookController::class,'bookDetail']);
 
 
 //ExcelDownloadController

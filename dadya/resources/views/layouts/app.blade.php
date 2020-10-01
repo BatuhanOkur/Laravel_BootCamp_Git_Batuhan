@@ -61,6 +61,29 @@
             background-color: white;
         }
 
+        .img-overlay{
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            background-color: #2C3136;
+            opacity: 0;
+        }
+
+        .img-overlay .icon{
+            color: white;
+            font-size: 20px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+        }
+
+        .card:hover .img-overlay{
+            opacity: .8;
+        }
+
     </style>
 </head>
 <body>
