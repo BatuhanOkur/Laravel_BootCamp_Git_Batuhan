@@ -97,7 +97,31 @@ class UserController extends Controller
         return redirect()->route('user.profile-card',['id' => $id])->with('message',$name." isimli kullanıcı süreli yasaklandı.");
     }
 
+    public function setAdmin($id){
+        User::where('id',$id)->update([
+            'admin' => true
+        ]);
+        $user = User::where('id',$id)->get();
+        $user = $user->first();
+        $name = $user->name;
+        return redirect()->route('user.profile-card',['id' => $id])->with('message',$name." isimli kullanıcıyı admin yaptın.");
+    }
 
+    public function removeAdmin($id){
+
+        if($id == auth()->user()->id){
+            return redirect()->route('user.profile-card',['id' => $id])->with('error','Kendi yetkini alamazsın.');
+        }
+        else{
+            User::where('id',$id)->update([
+                'admin' => false
+            ]);
+            $user = User::where('id',$id)->get();
+            $user = $user->first();
+            $name = $user->name;
+            return redirect()->route('user.profile-card',['id' => $id])->with('message',$name." isimli kullanıcının admin yetkisini aldın.");
+        }
+    }
 
 
 }

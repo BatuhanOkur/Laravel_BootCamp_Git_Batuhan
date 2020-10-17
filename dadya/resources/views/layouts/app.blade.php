@@ -7,7 +7,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>@yield('title')</title>
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
@@ -84,6 +84,8 @@
             opacity: .8;
         }
 
+        @yield('style')
+
     </style>
 </head>
 <body>
@@ -119,6 +121,9 @@
                             </li>
                         @endif
                     @else
+                        <li class="nav-item">
+                            <a href="/sepetim" class="nav-link"><i class="fas fa-shopping-cart"></i></a>
+                        </li>
                         <li class="nav-item dropdown">
                             <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                 <img style="border-radius: 50%; width: 30px;" class="h-8 w-8 rounded-full object-cover" src="{{ Auth::user()->profile_photo_url }}"  /> {{ Auth::user()->name }}
@@ -179,6 +184,8 @@
     setTimeout(function() {
         $('.alert-danger').remove();
     }, 5000);
+
+
 </script>
 </body>
 </html>

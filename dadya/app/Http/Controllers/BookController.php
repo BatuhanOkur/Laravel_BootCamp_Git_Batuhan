@@ -48,7 +48,7 @@ class BookController extends Controller
     }
 
     public function bookIndex(){
-        $books = Book::with(['user'])->where('deleted_at',null)->get();
+        $books = Book::with(['user'])->where('deleted_at','=',null)->get();
         return view('books.index',compact('books'));
     }
 
@@ -119,8 +119,9 @@ class BookController extends Controller
     }
 
     public function bookDetail($id){
+        $books = Book::all();
         $book = Book::where('id',$id)->get();
         $book = $book->first();
-        return view('books.detail',compact('book'));
+        return view('books.detail',compact('book','books'));
     }
 }

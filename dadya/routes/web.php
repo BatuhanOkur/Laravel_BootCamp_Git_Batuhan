@@ -2,9 +2,11 @@
 
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\BookController;
+use App\Http\Controllers\CartController;
 use App\Http\Controllers\ExcelDownloadController;
 use App\Http\Controllers\ExcelUploadController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\OrderController;
 use App\Http\Controllers\RefundController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
@@ -23,11 +25,20 @@ use Illuminate\Support\Facades\Route;
 //HomeController
 Route::get('/',[HomeController::class,'main']);
 
+
 //Auth
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     $books = \App\Models\Book::all();
     return view('dashboard',compact('books'));
 })->name('dashboard');
+
+//CartController
+Route::middleware(['auth:sanctum','verified'])->post('/sepete-ekle',[CartController::class,'addToCart'])->name('cart.add');
+Route::middleware(['auth:sanctum','verified'])->get('/sepetim',[CartController::class,'cartIndex']);
+Route::post('/sepet-sil/{id}',[CartController::class,'deleteCart'])->name('delete.cart');
+Route::post('/odeme-yap',[CartController::class,'buyItemsView'])->name('buy.view');
+Route::post('/odemeyi-tamamla',[CartController::class,'buyItems'])->name('buy.items');
+//Auth
 
 // AdminController
 Route::get('/admin',[AdminController::class,'adminView'])->name('admin');
@@ -43,6 +54,8 @@ Route::post('/kullanici-guncelle/{id}',[UserController::class,'userUpdate'])->na
 Route::get('/kullanici-profil-karti/{id}',[UserController::class,'userCardView'])->name('user.profile-card');
 Route::get('/kullanici-islemleri/sureli-yasakla/{id}',[UserController::class,'userTempBanView']);
 Route::post('/kullanici-islemleri/sureli-yasakla/{id}',[UserController::class,'userTempBan'])->name('user.temp-ban');
+Route::post('/kullanici-islemleri/admin-yap/{id}',[UserController::class,'setAdmin'])->name('user.setadmin');
+Route::post('/kullanici-islemleri/admin-yetkisini-al/{id}',[UserController::class,'removeAdmin'])->name('user.removeadmin');
 
 //BookController
 Route::get('/kitap-ekle',[BookController::class,'bookCreateView']);
@@ -56,6 +69,7 @@ Route::get('/kitap-detay/{id}',[BookController::class,'bookDetail']);
 
 //ExcelDownloadController
 Route::get('/indir-kitap-liste',[ExcelDownloadController::class,'bookExport'])->name('book.export');
+Route::get('/indir-kullanici-liste',[ExcelDownloadController::class,'userExport'])->name('user.export');
 
 //ExcelUploadController
 Route::get('/user-import',[ExcelUploadController::class,'userImportView']);
@@ -69,3 +83,11 @@ Route::get('/admin/iade-talepleri',[RefundController::class,'adminRefundsIndex']
 Route::get('/admin/iade-talepleri/{id}',[RefundController::class,'refundShow'])->name('refund.show');
 Route::get('/iade-talebi-olustur',[RefundController::class,'createRefundView']);
 Route::post('/iade-talebi-olustur',[RefundController::class,'createRefund'])->name('refund.create');
+Route::post('/admin/iade-talepleri/talebi-sonuclandir/{id}',[RefundController::class,'solveRefund'])->name('refund.solve');
+Route::post('/admin/iade-talepleri/talebi-onayla/{id}',[RefundController::class,'approveRefund'])->name('refund.approve');
+
+//OrderController
+Route::get('/admin/siparisler',[OrderController::class,'adminOrdersIndex']);
+Route::get('/siparislerim',[OrderController::class,'OrderIndex']);
+Route::post('/siparisi-sonuclandir/{id}',[OrderController::class,'deliverOrder'])->name('order.deliver');
+

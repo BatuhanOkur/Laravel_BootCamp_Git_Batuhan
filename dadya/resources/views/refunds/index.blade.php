@@ -14,7 +14,7 @@
             <tr>
                 <th scope="col">Talep ID</th>
                 <th scope="col">Başlık</th>
-                <th scope="col">İlgili Ürün</th>
+                <th scope="col">İlgili Siparişin Numarası</th>
             </tr>
             </thead>
             <tbody style="border: black 1px solid;">
@@ -23,7 +23,7 @@
                     <tr bgcolor="white">
                         <th scope="row">{{$refund->id}}</th>
                         <th>{{$refund->title}}</th>
-                        <th>{{$refund->book[0]->name}}</th>
+                        <th>#{{$refund->order[0]->id}}</th>
                     </tr>
                 @endif
             @endforeach
@@ -38,7 +38,7 @@
             <tr>
                 <th scope="col">Talep ID</th>
                 <th scope="col">Başlık</th>
-                <th scope="col">İlgili Ürün</th>
+                <th scope="col">İlgili Siparişin Numarası</th>
             </tr>
             </thead>
             <tbody style="border: black 1px solid;">
@@ -47,7 +47,7 @@
                     <tr bgcolor="white">
                         <th scope="row">{{$refund->id}}</th>
                         <th>{{$refund->title}}</th>
-                        <th>{{$refund->book[0]->name}}</th>
+                        <th>#{{$refund->order[0]->id}}</th>
                     </tr>
                 @endif
             @endforeach
@@ -62,7 +62,8 @@
             <tr>
                 <th scope="col">Talep ID</th>
                 <th scope="col">Başlık</th>
-                <th scope="col">İlgili Ürün</th>
+                <th scope="col">İlgili Siparişin Numarası</th>
+                <th scope="col">Sonuç</th>
             </tr>
             </thead>
             <tbody style="border: black 1px solid;">
@@ -71,7 +72,8 @@
                     <tr bgcolor="white">
                         <th scope="row">{{$refund->id}}</th>
                         <th>{{$refund->title}}</th>
-                        <th>{{$refund->book[0]->name}}</th>
+                        <th>#{{$refund->order[0]->id}}</th>
+                        <th>@if($refund->is_approved == true) ONAYLANDI @else REDDEDİLDİ @endif</th>
                     </tr>
                 @endif
             @endforeach

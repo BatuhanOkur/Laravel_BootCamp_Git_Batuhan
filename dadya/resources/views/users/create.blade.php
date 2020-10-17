@@ -12,7 +12,7 @@
         @endif
     </div>
     <div class="input-group" style="margin-left: 45%; margin-top: 100px;">
-        <div class="card">
+        <div class="card" style="width: 300px; margin-bottom: 200px;">
             <h5 class="card-header bg-dark" style="color: white;">Çalışan Ekle</h5>
             <div class="card-body">
                 <form class="form-signin" action="{{route('user.create')}}" method="post">

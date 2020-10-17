@@ -14,7 +14,7 @@
             <tr>
                 <th scope="col">Talep ID</th>
                 <th scope="col">Başlık</th>
-                <th scope="col">İlgili Ürün</th>
+                <th scope="col">İlgili Sipariş No</th>
                 <th scope="col">Onay Durumu</th>
                 <th scope="col">Talep Durumu</th>
                 <th scope="col">Görüntüle</th>
@@ -23,25 +23,28 @@
             <tbody style="border: black 1px solid;">
             @if(count($refunds) > 0)
                 @foreach($refunds as $refund)
-                    <tr bgcolor="white">
-                        <th scope="row">{{$refund->id}}</th>
-                        <th>{{$refund->title}}</th>
-                        <th>{{$refund->book[0]->name}}</th>
-                        <th>@if($refund->is_approved == true) ONAYLANDI @else ONAYLANMADI @endif</th>
-                        <th>AKTİF</th>
-                        <th><a class="btn btn-primary" href="{{route('refund.show',$refund->id)}}"><i class="far fa-eye"></i></a></th>
-                    </tr>
+                    @if($refund->is_solved == 0)
+                        <tr bgcolor="white">
+                            <th scope="row">{{$refund->id}}</th>
+                            <th>{{$refund->title}}</th>
+                            <th>{{$refund->order[0]->id}}</th>
+                            <th>@if($refund->is_approved == true) ONAYLANDI @else ONAYLANMADI @endif</th>
+                            <th>AKTİF</th>
+                            <th><a class="btn btn-primary" href="{{route('refund.show',$refund->id)}}"><i class="far fa-eye"></i></a></th>
+                        </tr>
+                    @else
+                        <tr bgcolor="white">
+                            <th class="text-muted">Aktif iade talebi bulunmuyor.</th>
+                            <th></th>
+                            <th></th>
+                            <th></th>
+                            <th></th>
+                            <th></th>
+                        </tr>
+                    @endif
                 @endforeach
-            @else
-                <tr bgcolor="white">
-                    <th class="text-muted">Aktif iade talebi bulunmuyor.</th>
-                    <th></th>
-                    <th></th>
-                    <th></th>
-                    <th></th>
-                    <th></th>
-                </tr>
             @endif
+
 
 
 
@@ -54,7 +57,7 @@
             <tr>
                 <th scope="col">Talep ID</th>
                 <th scope="col">Başlık</th>
-                <th scope="col">İlgili Ürün</th>
+                <th scope="col">İlgili Sipariş No</th>
                 <th scope="col">Onay Durumu</th>
                 <th scope="col">Talep Durumu</th>
                 <th scope="col">Görüntüle</th>
@@ -66,7 +69,7 @@
                         <tr bgcolor="white">
                             <th scope="row">{{$refund->id}}</th>
                             <th>{{$refund->title}}</th>
-                            <th>{{$refund->book[0]->name}}</th>
+                            <th>{{$refund->order[0]->id}}</th>
                             <th>@if($refund->is_approved == true) ONAYLANDI @else ONAYLANMADI @endif</th>
                             <th>ÇÖZÜLDÜ</th>
                             <th><a class="btn btn-primary" href="{{route('refund.show',$refund->id)}}"><i class="far fa-eye"></i></a></th>

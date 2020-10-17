@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Book;
+use App\Models\Order;
 use App\Models\Refund;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -12,7 +13,8 @@ class AdminController extends Controller
     public function adminView(){
         $users = User::where('deleted_at',null)->get();
         $refunds = Refund::where('is_solved',false)->get();
-        $data = [$users,$refunds];
+        $orders = Order::where('is_delivered',false)->get();
+        $data = [$users,$refunds,$orders];
         return view('layouts.panel',compact('data'));
     }
 

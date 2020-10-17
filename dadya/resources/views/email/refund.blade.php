@@ -46,9 +46,6 @@
 <body style="margin: 0 !important; padding: 0 !important; background-color: #eeeeee;" bgcolor="#eeeeee">
 
 <!-- HIDDEN PREHEADER TEXT -->
-<div style="display: none; font-size: 1px; color: #fefefe; line-height: 1px; font-family: Open Sans, Helvetica, Arial, sans-serif; max-height: 0px; max-width: 0px; opacity: 0; overflow: hidden;">
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus dolor aliquid omnis consequatur est deserunt, odio neque blanditiis aspernatur, mollitia ipsa distinctio, culpa fuga obcaecati!
-</div>
 
 <table border="0" cellpadding="0" cellspacing="0" width="100%">
     <tr>
@@ -121,7 +118,7 @@
                             <tr>
                                 <td align="left" style="font-family: Open Sans, Helvetica, Arial, sans-serif; font-size: 16px; font-weight: 400; line-height: 24px; padding-top: 15px;">
                                     <p style="font-size: 18px; font-weight: 800; line-height: 24px; color: #333333;">Selamlar {{Auth::user()->name}},</p>
-                                    <p style="font-size: 16px; font-weight: 400; line-height: 24px; color: #777777;">Oluşturduğunuz iade talebi tarafımıza ulaşmış ve formlarımıza kayıt edilmiştir.7 iş g&uuml;n&uuml; i&ccedil;eriside size geri d&ouml;n&uuml;ş yapılacaktır.<br />Dadya Kitap&ccedil;ılığı tercih ettiğiniz i&ccedil;in teşekk&uuml;r ederiz.</p>
+                                    <p style="font-size: 16px; font-weight: 400; line-height: 24px; color: #777777;">#{{order_id}} numaralı siparişiniz ile ilgili oluşturduğunuz iade talebi tarafımıza ulaşmış ve formlarımıza kayıt edilmiştir.7 iş g&uuml;n&uuml; i&ccedil;eriside size geri d&ouml;n&uuml;ş yapılacaktır.<br />Dadya Kitap&ccedil;ılığı tercih ettiğiniz i&ccedil;in teşekk&uuml;r ederiz.</p>
                                 </td>
                             </tr>
                             <tr>

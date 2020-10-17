@@ -8,7 +8,7 @@
         </div>
     @endif
     <div class="container">
-        <a href="/kullanici-ekle" class="btn btn-dark" style="margin-top: 20%; margin-left: 10%;" >Çalışan Ekle</a><a href="/indir" class="btn btn-primary" style="margin-top: 20%; " >Tabloyu İndir</a>
+        <a href="/kullanici-ekle" class="btn btn-dark" style="margin-top: 20%; margin-left: 10%;" >Kullanıcı Ekle</a><a href="{{route('user.export')}}" class="btn btn-primary" style="margin-top: 20%; " >Tabloyu İndir</a>
         <table class="table " style="width: 85%;  margin-left: 10%; margin-bottom: 20%; text-align: center;">
             <thead class="thead bg-dark" style="color: white;">
             <tr>
@@ -25,7 +25,7 @@
                     <th scope="row">{{$user->id}}</th>
                     <td>{{$user->name}}</td>
                     <td>{{$user->email}}</td>
-                    <td><a href="{{route('user.delete',$user->id)}}" class="btn btn-danger" onclick="return confirm('{{$user->name}} isimli kullanıcıyı silmek istediğinize emin misiniz?')"><i class="far fa-trash-alt"></i></a> <a href="/kullanici-guncelle/{{$user->id}}" class="btn btn-primary"><i class="fas fa-edit"></i></a><a href="/kullanici-profil-karti/{{$user->id}}" class="btn btn-primary"><i class="far fa-eye"></i></a></td>
+                    <td><a href="{{route('user.delete',$user->id)}}" class="btn btn-danger" onclick="return confirm('{{$user->name}} isimli kullanıcıyı silmek istediğinize emin misiniz?')"><i class="far fa-trash-alt"></i></a> <a href="/kullanici-guncelle/{{$user->id}}" class="btn btn-primary"><i class="fas fa-edit"></i></a> <a href="/kullanici-profil-karti/{{$user->id}}" class="btn btn-primary"><i class="far fa-eye"></i></a></td>
 
                 </tr>
             @endforeach

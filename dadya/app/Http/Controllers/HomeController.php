@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Book;
+use App\Models\Cart;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -11,4 +12,5 @@ class HomeController extends Controller
         $books = Book::all();
         return view('main',compact('books'));
     }
+
 }

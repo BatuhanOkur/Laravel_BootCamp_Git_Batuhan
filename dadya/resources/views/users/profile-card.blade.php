@@ -1,5 +1,6 @@
 @extends('layouts.admin')
 
+
 @section('content')
     @if(session()->has('message'))
         <div class="alert alert-success" role="alert" style="margin-left: 16%; position: sticky;">
@@ -7,11 +8,18 @@
 
         </div>
     @endif
+    @if(session()->has('error'))
+        <div class="alert alert-danger" role="alert" style="margin-left: 16%; position: sticky;">
+            {{ session()->get('error') }}<button type="button" data-dismiss="alert" class="close" aria-label="Close"><span aria-hidden="true">&times;</span></button></li>
+
+        </div>
+    @endif
+
     <div class="main-content">
         <div class="section__content section__content--p30">
             <div class="container-fluid">
                 <div class="row">
-                    <div class="card" style="margin-left: 25%; margin-top: 100px;">
+                    <div class="card" style="margin-left: 25%; margin-bottom: 300px; margin-top: 100px;" >
                         <div class="card-header bg-dark">
                             <strong>{{$user->name}} İsimli Kullanıcının Profil Kartı</strong>
                         </div>
@@ -27,8 +35,18 @@
                             <ul class="dropdown-menu" role="menu">
                                 <li><a href="/kullanici-islemleri/sureli-yasakla/{{$user->id}}">Süreli Yasakla</a></li>
                                 <li><a href="">Kalıcı Yasakla</a></li>
-                                <li><a href="#">Admin yetkisi ver</a></li>
                             </ul>
+                            @if($user->admin == false)
+                                <form style="margin-top: 5px;"  method="post" action="{{route('user.setadmin',$user->id)}}">
+                                    @csrf
+                                    <button type="submit" class="btn btn-success">Admin Yetkisi Ver</button>
+                                </form>
+                            @else
+                                <form style="margin-top: 5px;" method="post" action="{{route('user.removeadmin',$user->id)}}">
+                                    @csrf
+                                    <button type="submit" class="btn btn-danger">Admin Yetkisini Al</button>
+                                </form>
+                            @endif
                         </div>
                     </div>
                 </div>

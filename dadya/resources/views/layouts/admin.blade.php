@@ -45,7 +45,7 @@
             background-color: white;
             color: #47A447;
         }
-
+        @yield('style')
     </style>
 </head>
 
@@ -141,6 +141,12 @@
                                     </a>
                                 </li>
                                 <li class="nav-item">
+                                    <a href="/admin/siparisler" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Siparişler</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
                                     <a href="/admin/iade-talepleri" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>İade Talepleri</p>
@@ -171,6 +177,12 @@
                                 </a>
                             </li>
                             <li class="nav-item">
+                                <a href="/siparislerim"  class="nav-link">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>Siparişlerim</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
                                 <a href="/iade-taleplerim"  class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>İade Taleplerim</p>
@@ -193,13 +205,7 @@
         <!-- /.content -->
     </div>
     <!-- /.content-wrapper -->
-    <footer class="main-footer">
-        <strong>Copyright &copy;2020 Dadya</strong>
-        All rights reserved.
-        <div class="float-right d-none d-sm-inline-block">
-            <b>Version</b> 3.1.0-pre
-        </div>
-    </footer>
+
 
     <!-- Control Sidebar -->
     <aside class="control-sidebar control-sidebar-dark">

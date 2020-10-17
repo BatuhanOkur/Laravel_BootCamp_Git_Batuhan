@@ -11,6 +11,23 @@
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
     <execution />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="PhpServers">
+    <servers>
+      <server host="dadya" id="56a764b4-f362-4a68-aee1-62052d807755" name="dadya" use_path_mappings="true">
+        <path_mappings>
+          <mapping local-root="$PROJECT_DIR$" remote-root="/home/vagrant/www/dadya" />
+          <mapping local-root="$PROJECT_DIR$/public" remote-root="/home/vagrant/www/dadya/public" />
+        </path_mappings>
+      </server>
+    </servers>
+  </component>
   <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
       <path value="$PROJECT_DIR$/vendor/vlucas/phpdotenv" />
@@ -148,7 +165,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../bootcampProject" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -160,11 +177,18 @@
       <recent name="C:\Users\ghjk2\www\dadya\public" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="PHP Web Page.dadya">
     <configuration name="phpunit.xml" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
       <TestRunner scope="XML" />
       <method v="2" />
     </configuration>
+    <configuration name="dadya" type="PhpWebAppRunConfigurationType" factoryName="PHP Web Application" server_name="dadya">
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="PHP Web Page.dadya" />
+      <item itemvalue="PHPUnit.phpunit.xml" />
+    </list>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -193,6 +217,14 @@
       <workItem from="1601200749546" duration="1643000" />
       <workItem from="1601479796799" duration="1695000" />
       <workItem from="1601551100055" duration="9162000" />
+      <workItem from="1601640314234" duration="13285000" />
+      <workItem from="1601827671993" duration="8927000" />
+      <workItem from="1601922215297" duration="1051000" />
+      <workItem from="1602003705694" duration="7773000" />
+      <workItem from="1602326509292" duration="17344000" />
+      <workItem from="1602408515628" duration="6348000" />
+      <workItem from="1602845677472" duration="2829000" />
+      <workItem from="1602849910587" duration="14733000" />
     </task>
     <servers />
   </component>
@@ -200,18 +232,78 @@
     <option name="version" value="3" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="348" y="98" key="#Servers" timestamp="1601830800526">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="348" y="98" key="#Servers/0.0.1536.824@0.0.1536.824" timestamp="1601830800526" />
+    <state x="223" y="0" width="1089" height="824" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1601830801130">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="223" y="0" width="1089" height="824" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1601830801130" />
     <state x="528" y="214" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1600764687932">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="528" y="214" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1536.824@0.0.1536.824" timestamp="1600764687932" />
-    <state x="402" y="179" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1601152624069">
+    <state x="474" y="83" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1601650605133">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="402" y="179" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1536.824@0.0.1536.824" timestamp="1601152624069" />
-    <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1600601039711">
+    <state x="474" y="83" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1536.824@0.0.1536.824" timestamp="1601650605133" />
+    <state x="402" y="179" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1602854935278">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1600601039711" />
+    <state x="402" y="179" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1536.824@0.0.1536.824" timestamp="1602854935278" />
+    <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1602411633717">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1602411633717" />
+    <state width="1493" height="261" key="GridCell.Tab.0.bottom" timestamp="1601846532660">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="261" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1601846532660" />
+    <state width="1493" height="261" key="GridCell.Tab.0.center" timestamp="1601846532659">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="261" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1601846532659" />
+    <state width="1493" height="261" key="GridCell.Tab.0.left" timestamp="1601846532659">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="261" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1601846532659" />
+    <state width="1493" height="261" key="GridCell.Tab.0.right" timestamp="1601846532660">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="261" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1601846532660" />
+    <state width="1493" height="261" key="GridCell.Tab.1.bottom" timestamp="1601846532660">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="261" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1601846532660" />
+    <state width="1493" height="261" key="GridCell.Tab.1.center" timestamp="1601846532660">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="261" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1601846532660" />
+    <state width="1493" height="261" key="GridCell.Tab.1.left" timestamp="1601846532660">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="261" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1601846532660" />
+    <state width="1493" height="261" key="GridCell.Tab.1.right" timestamp="1601846532660">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="261" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1601846532660" />
+    <state width="1493" height="261" key="GridCell.Tab.2.bottom" timestamp="1601846532661">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="261" key="GridCell.Tab.2.bottom/0.0.1536.824@0.0.1536.824" timestamp="1601846532661" />
+    <state width="1493" height="261" key="GridCell.Tab.2.center" timestamp="1601846532660">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="261" key="GridCell.Tab.2.center/0.0.1536.824@0.0.1536.824" timestamp="1601846532660" />
+    <state width="1493" height="261" key="GridCell.Tab.2.left" timestamp="1601846532660">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="261" key="GridCell.Tab.2.left/0.0.1536.824@0.0.1536.824" timestamp="1601846532660" />
+    <state width="1493" height="261" key="GridCell.Tab.2.right" timestamp="1601846532660">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="261" key="GridCell.Tab.2.right/0.0.1536.824@0.0.1536.824" timestamp="1601846532660" />
     <state x="573" y="135" key="NewPhpClassDialog" timestamp="1600435703596">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

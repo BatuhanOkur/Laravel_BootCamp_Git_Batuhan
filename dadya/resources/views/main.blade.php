@@ -1,4 +1,7 @@
 @extends('layouts.app')
+@section('title')
+    Dadya Anasayfa
+@endsection
 
 @section('content')
 
@@ -26,15 +29,18 @@
             </div>
         @endif
         @foreach($books as $book)
-            @if($book->number > 0 and $book->deleted_at == null)
+            @if($book->number > 0)
                 <div class="card" style="width: 18rem;">
-                    <img class="card-img-top" src="{{asset('/uploads/books/').'/'.$book->photo}}" alt="{{$book->name}}">
-                    <div class="card-body">
-                        <p class="card-text">Kitap : {{$book->name}}<br>Yazar : {{$book->author}}<br>Fiyat : {{$book->price}}</p>
-                        <div class="card-footer text-muted float-left">
-                            Stokta bu üründen {{$book->number}} adet bulunuyor.
+                    <a href="/kitap-detay/{{$book->id}}">
+                        <img class="card-img-top" src="{{asset('/uploads/books/').'/'.$book->photo}}" alt="{{$book->name}}">
+                        <div class="img-overlay">
+                            <div class="icon">
+                                <i class="fas fa-search-plus fa-3x"></i>
+                            </div>
                         </div>
-                        <a href="#" class="btn btn-primary"><i class="fas fa-shopping-cart"></i> Sepete Ekle</a>
+                    </a>
+                    <div class="card-body">
+                        <p class="card-text">Kitap İsmi : {{$book->name}}
                     </div>
                 </div>
             @endif

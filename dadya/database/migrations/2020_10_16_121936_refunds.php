@@ -16,7 +16,7 @@ class Refunds extends Migration
         Schema::create('refunds', function (Blueprint $table) {
             $table->increments('id');
             $table->string('title');
-            $table->integer('book_id')->unsigned();
+            $table->integer('order_id')->unsigned();
             $table->string('details');
             $table->boolean('is_approved')->default(false);
             $table->boolean('is_solved')->default(false);
@@ -29,7 +29,7 @@ class Refunds extends Migration
             $table->foreign('created_by')->references('id')->on('users')->cascadeOnDelete();
             $table->foreign('updated_by')->references('id')->on('users')->cascadeOnDelete();
             $table->foreign('deleted_by')->references('id')->on('users')->cascadeOnDelete();
-            $table->foreign('book_id')->references('id')->on('books')->cascadeOnDelete();
+            $table->foreign('order_id')->references('id')->on('orders')->cascadeOnDelete();
         });
     }
 

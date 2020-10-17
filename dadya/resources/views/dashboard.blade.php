@@ -1,4 +1,7 @@
 @extends('layouts.app')
+@section('title')
+    Dadya Anasayfa
+@endsection
 
 @section('content')
 
